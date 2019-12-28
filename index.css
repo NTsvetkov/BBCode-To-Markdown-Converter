@@ -45,7 +45,7 @@ span {
 	font-weight: bold;
 }
 
-#copybtn {
+#copyObtn, #copyCbtn {
 	height: 8% !important;
 }
 

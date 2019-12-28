@@ -10,12 +10,13 @@
   </head>
   <body>
     <div id="fork" class="text-center">
-      <a href="http://github.com/JonDum/BBCode-To-Markdown-Converter">Fork me on Github</a>
+      <a href="http://github.com/JonDum/BBCode-To-Markdown-Converter">Based on</a> ||
+      <a href="http://github.com/NTsvetkov/BBCode-To-Markdown-Converter">Source here</a>
     </div>
     <div class="container-fluid">
       <div class="row">
         <div class="col text-center">
-          <h1>BBCode to Markdown (Reddit) Converter</h1>
+          <h1>BBCode to Markdown (Reddit) Converter (modified version)</h1>
           <h3><small class="text-muted">Paste your BBCode into the left, Markdown appears on the right.</small></h3>
           <h3><small class="text-primary">Please keep in mind that not all BBCode constructs are implemented yet.</small></h3><br/>
         </div>
@@ -25,16 +26,24 @@
       <div class="row">
         <div class="col">
           <textarea id="left_ta" value="" onChange="convert()" onKeyUp="convert()"></textarea>
+          <button type="button" class="btn btn-primary btn-lg btn-block" id="copyObtn" data-clipboard-target="#left_ta">Copy Above Text</button>
         </div>
         <div class="col-md-auto">
         >
         </div>
         <div class="col">
           <textarea id="right_ta"></textarea>
-          <button type="button" class="btn btn-primary btn-lg btn-block" id="copybtn">Copy Above Text</button>
+          <button type="button" class="btn btn-primary btn-lg btn-block" id="copyCbtn" data-clipboard-target="#right_ta">Copy Above Text</button>
         </div>
       </div>
     </div>
-    <script type="text/javascript" src="copy.min.js"></script>
-  </body>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
+	<script>
+		$(function () {
+			new ClipboardJS('#copyObtn');
+			new ClipboardJS('#copyCbtn');
+		});
+	</script>
+	</body>
 </html>
